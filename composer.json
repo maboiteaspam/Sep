@@ -13,11 +13,11 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com/maboiteaspam/idiorm.git"
+      "url": "git@github.com:maboiteaspam/idiorm.git"
     },
     {
       "type": "vcs",
-      "url": "git@github.com/maboiteaspam/paris.git"
+      "url": "git@github.com:maboiteaspam/paris.git"
     }
   ],
   "minimum-stability": "dev"
