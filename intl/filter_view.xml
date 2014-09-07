@@ -1,0 +1,35 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="filter.new_view">
+        <translated lng="en">New view</translated>
+        <translated lng="fr">Nouvelle vue</translated>
+    </message>
+    <message code="filter.edit_view">
+        <translated lng="en">Edit view</translated>
+        <translated lng="fr">Editer la vue</translated>
+    </message>
+    <message code="filter.visit_view">
+        <translated lng="en">Visit view</translated>
+        <translated lng="fr">Parcourir la vue</translated>
+    </message>
+    <message code="filter.edit_condition">
+        <translated lng="en">Edit</translated>
+        <translated lng="fr">Modifier</translated>
+    </message>
+    <message code="filter.remove_condition">
+        <translated lng="en">Remove</translated>
+        <translated lng="fr">Supprimer</translated>
+    </message>
+    <message code="filter.add_condition">
+        <translated lng="en">Add</translated>
+        <translated lng="fr">Ajouter</translated>
+    </message>
+    <message code="filter.missing_name">
+        <translated lng="en">Name must not be empty</translated>
+        <translated lng="fr">Veuillez saisir un nom</translated>
+    </message>
+    <message code="filter.missing_columns">
+        <translated lng="en">Please select a column</translated>
+        <translated lng="fr">Veuillez choisir une colonne</translated>
+    </message>
+</intl>

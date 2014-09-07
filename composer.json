@@ -1,0 +1,24 @@
+{
+  "name": "maboiteaspam/sep",
+  "license": "MIT",
+  "keywords": ["backend", "database", "sql", "orm"],
+  "require": {
+    "maboiteaspam/idiorm": "static",
+    "maboiteaspam/paris": "static",
+    "illuminate/database": "4.2.*",
+    "phpoffice/phpexcel": "1.8.*",
+    "slim/slim": "2.4.*",
+    "Respect/Validation": "0.7.*@dev"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/maboiteaspam/idiorm"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/maboiteaspam/paris"
+    }
+  ],
+  "minimum-stability": "dev"
+}

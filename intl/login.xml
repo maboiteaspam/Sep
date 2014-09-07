@@ -1,0 +1,11 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="login.page_title">
+        <translated lng="en">Login</translated>
+        <translated lng="fr">Connexion</translated>
+    </message>
+    <message code="login_failure.page_title">
+        <translated lng="en">Login has failed !</translated>
+        <translated lng="fr">Connection refusée !</translated>
+    </message>
+</intl>

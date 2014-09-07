@@ -1,0 +1,67 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="btn.login">
+        <translated lng="en">Login</translated>
+        <translated lng="fr">Connecter</translated>
+    </message>
+    <message code="btn.logout">
+        <translated lng="en">Logout</translated>
+        <translated lng="fr">Déconnecter</translated>
+    </message>
+    <message code="btn.choose_language">
+        <translated lng="en">Change language</translated>
+        <translated lng="fr">Changer de langue</translated>
+    </message>
+    <message code="([^.]+[.])?btn.del_record">
+        <translated lng="en">delete</translated>
+        <translated lng="fr">supprimer</translated>
+    </message>
+    <message code="([^.]+[.])?btn.edit_record">
+        <translated lng="en">edit</translated>
+        <translated lng="fr">modifier</translated>
+    </message>
+    <message code="([^.]+[.])?btn.add_record">
+        <translated lng="en">Add</translated>
+        <translated lng="fr">Ajouter</translated>
+    </message>
+    <message code="([^.]+[.])?btn.edit_record">
+        <translated lng="en">Edit</translated>
+        <translated lng="fr">Modifier</translated>
+    </message>
+    <message code="([^.]+[.])?btn.previous_url">
+        <translated lng="en">Back</translated>
+        <translated lng="fr">Retour</translated>
+    </message>
+    <message code="([^.]+[.])?btn.save">
+        <translated lng="en">Save</translated>
+        <translated lng="fr">Enregistrer</translated>
+    </message>
+    <message code="([^.]+[.])?btn.cancel">
+        <translated lng="en">Cancel</translated>
+        <translated lng="fr">Annuler</translated>
+    </message>
+    <message code="([^.]+[.])?btn.reset">
+        <translated lng="en">Reset</translated>
+        <translated lng="fr">Réinitialiser</translated>
+    </message>
+    <message code="([^.]+[.])?btn.delete">
+        <translated lng="en">Delete</translated>
+        <translated lng="fr">Supprimer</translated>
+    </message>
+    <message code="([^.]+[.])?btn.export_excel">
+        <translated lng="en">Export to excel</translated>
+        <translated lng="fr">Export excel</translated>
+    </message>
+    <message code="([^.]+[.])?btn.previous_page">
+        <translated lng="en"> </translated>
+        <translated lng="fr"> </translated>
+    </message>
+    <message code="([^.]+[.])?btn.next_page">
+        <translated lng="en"> </translated>
+        <translated lng="fr"> </translated>
+    </message>
+    <message code="([a-z]+).view_more">
+        <translated lng="en"> </translated>
+        <translated lng="fr"> </translated>
+    </message>
+</intl>

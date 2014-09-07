@@ -1,0 +1,11 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="submit.add_record">
+        <translated lng="en">Add</translated>
+        <translated lng="fr">Ajouter</translated>
+    </message>
+    <message code="submit.edit_record">
+        <translated lng="en">Edit</translated>
+        <translated lng="fr">Modifier</translated>
+    </message>
+</intl>

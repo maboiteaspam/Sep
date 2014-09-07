@@ -1,0 +1,126 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="id.(field_name|header_name)">
+        <translated lng="en">#</translated>
+        <translated lng="fr">#</translated>
+    </message>
+    <message code="gender.(field_name|header_name)">
+        <translated lng="en">gender</translated>
+        <translated lng="fr">Civilité</translated>
+    </message>
+    <message code="username.(field_name|header_name)">
+        <translated lng="en">username</translated>
+        <translated lng="fr">Nom d'utilisateur</translated>
+    </message>
+    <message code="name.(field_name|header_name)">
+        <translated lng="en">name</translated>
+        <translated lng="fr">nom</translated>
+    </message>
+    <message code="name.place_holder">
+        <translated lng="en">Enter a name</translated>
+        <translated lng="fr">Saisissez un nom</translated>
+    </message>
+    <message code="first_name.(field_name|header_name)">
+        <translated lng="en">first name</translated>
+        <translated lng="fr">prénom</translated>
+    </message>
+    <message code="first_name.place_holder">
+        <translated lng="en">Enter your first name</translated>
+        <translated lng="fr">Saisissez votre prénom</translated>
+    </message>
+    <message code="first_name.must_not_be_empty">
+        <translated lng="en">First name must not be empty</translated>
+        <translated lng="fr">Votre prénom de doit pas être vide</translated>
+    </message>
+    <message code="last_name.(field_name|header_name)">
+        <translated lng="en">name</translated>
+        <translated lng="fr">nom</translated>
+    </message>
+    <message code="last_name.place_holder">
+        <translated lng="en">Enter your name</translated>
+        <translated lng="fr">Saisissez votre nom</translated>
+    </message>
+    <message code="last_name.must_not_be_empty">
+        <translated lng="en">Name must not be empty</translated>
+        <translated lng="fr">Votre nom de doit pas être vide</translated>
+    </message>
+    <message code="login.(field_name|header_name)">
+        <translated lng="en">Login</translated>
+        <translated lng="fr">Nom d'utilisateur</translated>
+    </message>
+    <message code="login.place_holder">
+        <translated lng="en">Enter your login</translated>
+        <translated lng="fr">Saisissez votre nom d'utilisateur</translated>
+    </message>
+    <message code="password.(field_name|header_name)">
+        <translated lng="en">Password</translated>
+        <translated lng="fr">Mot de passe</translated>
+    </message>
+    <message code="password.place_holder">
+        <translated lng="en">Enter your password</translated>
+        <translated lng="fr">Saisissez votre mot de passe</translated>
+    </message>
+    <message code="mobile.(field_name|header_name)">
+        <translated lng="en">Mobile</translated>
+        <translated lng="fr">Mobile</translated>
+    </message>
+    <message code="mobile.place_holder">
+        <translated lng="en">0123456789</translated>
+        <translated lng="fr">0123456789</translated>
+    </message>
+    <message code="email.(field_name|header_name)">
+        <translated lng="en">Email</translated>
+        <translated lng="fr">Email</translated>
+    </message>
+    <message code="email.place_holder">
+        <translated lng="en">user@domain.tld</translated>
+        <translated lng="fr">user@domain.tld</translated>
+    </message>
+    <message code="longitude.(field_name|header_name)">
+        <translated lng="en">Longitude</translated>
+        <translated lng="fr">Longitude</translated>
+    </message>
+    <message code="longitude.place_holder">
+        <translated lng="en">31.2</translated>
+        <translated lng="fr">31.2</translated>
+    </message>
+    <message code="latitude.(field_name|header_name)">
+        <translated lng="en">Latitude</translated>
+        <translated lng="fr">Latitude</translated>
+    </message>
+    <message code="latitude.place_holder">
+        <translated lng="en">121.5</translated>
+        <translated lng="fr">121.5</translated>
+    </message>
+    <message code="wording.(field_name|header_name)">
+        <translated lng="en">Wording</translated>
+        <translated lng="fr">Intitulé</translated>
+    </message>
+    <message code="wording.place_holder">
+        <translated lng="en">put content</translated>
+        <translated lng="fr">saisissez le contenu</translated>
+    </message>
+
+    <message code="response_type.(field_name|header_name)">
+        <translated lng="en">Response type</translated>
+        <translated lng="fr">Type de réponse</translated>
+    </message>
+    <message code="subscription_date.(field_name|header_name)">
+        <translated lng="en">Subscription date</translated>
+        <translated lng="fr">Date d'inscription</translated>
+    </message>
+    <message code="birth_date.(field_name|header_name)">
+        <translated lng="en">Birth date</translated>
+        <translated lng="fr">Date de naissance</translated>
+    </message>
+
+
+    <message code="edit.(field_name|header_name)">
+        <translated lng="en">Edit</translated>
+        <translated lng="fr">Modifier</translated>
+    </message>
+    <message code="delete.(field_name|header_name)">
+        <translated lng="en">Delete</translated>
+        <translated lng="fr">Supprimer</translated>
+    </message>
+</intl>

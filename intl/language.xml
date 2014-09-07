@@ -1,0 +1,15 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="choose_language.field_name">
+        <translated lng="en">Language</translated>
+        <translated lng="fr">Langue</translated>
+    </message>
+    <message code="lang_en.title">
+        <translated lng="en">English</translated>
+        <translated lng="fr">Anglais</translated>
+    </message>
+    <message code="lang_fr.title">
+        <translated lng="en">French</translated>
+        <translated lng="fr">Français</translated>
+    </message>
+</intl>
