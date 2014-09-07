@@ -1,0 +1,52 @@
+<?php
+return function( \Sep\IntlMessages $intl ){
+    return [
+        "model_type"=>"Role",
+        "privileges"=>[
+            "Admin"
+        ],
+        "detail"=>[
+            "model"=>[
+                "id"=>[],
+                "name"=>[]
+            ],
+            "data"=>[
+                "delete_confirm_message"=>function($view,$item)use($intl){
+                        return $intl->get_message(
+                            "Role.confirm_deletion_message",
+                            array("name"=>$item->name)
+                        );
+                    },
+            ]
+        ],
+        "list"=>[
+            "model"=>[
+                "id"=>[],
+                "name"=>[],
+                "Admin.id"=>[],
+                "Admin.login"=>[],
+                "Admin.first_name"=>[],
+                "Admin.last_name"=>[],
+                "Admin.password"=>[],
+                "edit"=>[],
+                "delete"=>[
+                    "delete_confirm_message"=>function($view,$item)use($intl){
+                        return $intl->get_message(
+                            "Role.confirm_deletion_message",
+                            array("name"=>$item->name)
+                        );
+                    },
+                ],
+            ],
+            "default_headers"=>[
+                "id",
+                "name",
+                "Admin.login",
+                "edit",
+                "delete",
+            ],
+            "data"=>[
+            ],
+        ],
+    ];
+};

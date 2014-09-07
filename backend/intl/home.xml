@@ -1,0 +1,7 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="home.page_title">
+        <translated lng="en">Home</translated>
+        <translated lng="fr">Page d'accueil</translated>
+    </message>
+</intl>

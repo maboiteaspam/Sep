@@ -1,0 +1,30 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="role.(list.page_title|group_menu_label)">
+        <translated lng="en">Roles</translated>
+        <translated lng="fr">Rôles</translated>
+    </message>
+    <message code="role.add.page_title">
+        <translated lng="en">Add role</translated>
+        <translated lng="fr">Ajouter un rôle</translated>
+    </message>
+    <message code="role.edit.page_title">
+        <translated lng="en">Edit role</translated>
+        <translated lng="fr">Editer un rôle</translated>
+    </message>
+    <message code="role.confirm_deletion_message">
+        <translated lng="en">Confirm deletion of Role '%s'</translated>
+        <translated lng="fr">Confirmer la suppression du rôle '%s'</translated>
+    </message>
+
+
+
+    <message code="role.name.(field_name|header_name)">
+        <translated lng="en">Role</translated>
+        <translated lng="fr">Rôle</translated>
+    </message>
+    <message code="role.id.(field_name|header_name)">
+        <translated lng="en">Role - id</translated>
+        <translated lng="fr">Rôle - id</translated>
+    </message>
+</intl>

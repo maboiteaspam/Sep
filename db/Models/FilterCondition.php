@@ -1,0 +1,41 @@
+<?
+class FilterCondition extends \Sep\ORM\Model {
+    public static $orm_model = [
+        "id"=>[
+            "read_only"=>true,
+            "pk"=>true,
+            "type"=>"int",
+        ],
+        "filter_id"=>[
+            "type"=>"int",
+            "is_nullable"=>false,
+        ],
+        "left_field_type"=>[
+            "type"=>"text",
+            "is_nullable"=>false,
+            "options"=>['property','value','view','rawsql'],
+        ],
+        "left_field"=>[
+            "type"=>"text",
+            "is_nullable"=>false,
+        ],
+        "operator"=>[
+            "type"=>"text",
+            "is_nullable"=>false,
+            "options"=>['=','!=','>=','<=','LIKE','NOT LIKE','IN','NOT IN','IS NULL','IS NOT NULL'],
+        ],
+        "right_field_type"=>[
+            "type"=>"text",
+            "is_nullable"=>false,
+            "options"=>['property','value','view','rawsql'],
+        ],
+        "right_field"=>[
+            "type"=>"text",
+            "is_nullable"=>false,
+        ],
+        "position"=>[
+            "type"=>"int",
+            "is_nullable"=>false,
+        ],
+    ];
+}

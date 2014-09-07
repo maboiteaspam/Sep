@@ -1,0 +1,49 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="admin.(list.page_title|group_menu_label)">
+        <translated lng="en">Administrators</translated>
+        <translated lng="fr">Administrateurs</translated>
+    </message>
+    <message code="admin.add.page_title">
+        <translated lng="en">Add administrator</translated>
+        <translated lng="fr">Ajouter un administrateur</translated>
+    </message>
+    <message code="admin.edit.page_title">
+        <translated lng="en">Edit administrator</translated>
+        <translated lng="fr">Editer un administrateur</translated>
+    </message>
+    <message code="admin.confirm_deletion_message">
+        <translated lng="en">Confirm deletion of Administrator '%s'</translated>
+        <translated lng="fr">Confirmer la suppression de l'administrateur '%s'</translated>
+    </message>
+    <message code="admin.btn.add_record">
+        <translated lng="en">Add administrator</translated>
+        <translated lng="fr">Ajouter un administrateur</translated>
+    </message>
+
+
+    <message code="admin.password.header_name">
+        <translated lng="en">Administrator's password</translated>
+        <translated lng="fr">Mot de passe de l'administrateur</translated>
+    </message>
+    <message code="admin.first_name.header_name">
+        <translated lng="en">Administrator's first name</translated>
+        <translated lng="fr">prénom de l'administrateur</translated>
+    </message>
+    <message code="admin.last_name.header_name">
+        <translated lng="en">Administrator's last name</translated>
+        <translated lng="fr">Nom de l'administrateur</translated>
+    </message>
+    <message code="admin.name.header_name">
+        <translated lng="en">Administrator's name</translated>
+        <translated lng="fr">Nom complet de l'administrateur</translated>
+    </message>
+    <message code="admin.login.header_name">
+        <translated lng="en">Administrator's login</translated>
+        <translated lng="fr">Identifiant de l'administrateur</translated>
+    </message>
+    <message code="admin.id.header_name">
+        <translated lng="en">Administrator's id</translated>
+        <translated lng="fr">id de l'administrateur</translated>
+    </message>
+</intl>
