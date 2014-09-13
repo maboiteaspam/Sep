@@ -160,8 +160,9 @@ class Backend extends Bootstrap{
 
 // layouts
 //----------------
-        $adminLayout = function ( $content_view, $params=array() ) use($app,$intl,$sanitizer) {
+        $adminLayout = function ( $content_view, $params=array() ) use($app,$intl,$sanitizer,$view_models) {
             $MenuView = new \Sep\View\Menu($app,$intl,$sanitizer);
+            $MenuView->init($view_models["Menu"]($app,$intl));
             $ChangeLanguageView = new \Sep\View\ChangeLanguage($app,$intl,$sanitizer);
             $ChangeLanguageView->init();
             $FlashMessagesView = new \Sep\View\FlashMessages($app,$intl,$sanitizer);
