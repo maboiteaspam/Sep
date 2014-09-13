@@ -537,6 +537,6 @@ class Backend extends Bootstrap{
 // Static assets
 //----------------
         $app->get(":path",[$this,"load_static_asset"])
-            ->conditions(array('path' => ".+[.](js|css|gif|png|jpg|jpeg)"));
+            ->conditions(array('path' => ".+[.](js|css|gif|png|jpg|jpeg|woff|ttf|svg)"));
     }
 } 
