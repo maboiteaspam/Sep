@@ -3,22 +3,46 @@
   "license": "MIT",
   "keywords": ["backend", "database", "sql", "orm"],
   "require": {
-    "maboiteaspam/idiorm": "dev-static",
-    "maboiteaspam/paris": "dev-static",
+      "maboiteaspam/idiorm": "1.0.0",
+      "maboiteaspam/paris": "1.0.0",
     "illuminate/database": "4.2.*",
     "phpoffice/phpexcel": "1.8.*",
     "slim/slim": "2.4.*",
     "Respect/Validation": "0.7.*@dev"
   },
-  "repositories": [
-    {
-      "type": "git",
-        "url": "https://github.com/maboiteaspam/idiorm"
-    },
-    {
-      "type": "git",
-        "url": "https://github.com/maboiteaspam/paris"
-    }
-  ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "maboiteaspam/idiorm",
+                "version": "1.0.0",
+                "dist": {
+                    "url": "https://github.com/maboiteaspam/idiorm/zipball/static",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/maboiteaspam/idiorm.git",
+                    "type": "git",
+                    "reference": "static"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "maboiteaspam/paris",
+                "version": "1.0.0",
+                "dist": {
+                    "url": "https://github.com/maboiteaspam/paris/zipball/static",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/maboiteaspam/paris.git",
+                    "type": "git",
+                    "reference": "static"
+                }
+            }
+        }
+    ],
   "minimum-stability": "dev"
 }
