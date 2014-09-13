@@ -1,6 +1,7 @@
 {
     "name": "maboiteaspam/sep",
     "license": "MIT",
+    "type": "library",
     "description": " is missing",
     "keywords": ["backend", "database", "sql", "orm"],
     "require": {
