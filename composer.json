@@ -12,12 +12,12 @@
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "git@github.com:maboiteaspam/idiorm.git"
+      "type": "git",
+        "url": "https://github.com/maboiteaspam/idiorm"
     },
     {
-      "type": "vcs",
-      "url": "git@github.com:maboiteaspam/paris.git"
+      "type": "git",
+        "url": "https://github.com/maboiteaspam/paris"
     }
   ],
   "minimum-stability": "dev"
