@@ -1,6 +1,7 @@
 {
   "name": "maboiteaspam/sep",
   "license": "MIT",
+  "description": " is missing",
   "keywords": ["backend", "database", "sql", "orm"],
   "require": {
       "maboiteaspam/idiorm": "1.0.0",
