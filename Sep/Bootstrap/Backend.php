@@ -32,20 +32,15 @@ class Backend extends Bootstrap{
         $app->setName($config["app_name"]);
         $app->container->set("UserSession", new \Sep\UserSession());
         $app->container->set("user_languages", $config["user_languages"]);
-    }
 
-    public function get_user_language( ){
-        $app = $this->app;
         $user_language = $app->getCookie("language");
         if( ! $user_language ) $user_language = parent::get_user_language();
-        return $user_language;
+        $app->container->set("user_language", $user_language);
     }
 
     public function load_intl_messages($dirs=[],$language=null ){
-        $app = $this->app;
+        $language = !$language?$this->app->container->get("user_language"):$language;
         parent::load_intl_messages($dirs,$language);
-        if(!$language) $language=$this->get_user_language();
-        $app->container->set("user_language", $language);
     }
 
     public function load_app(){
