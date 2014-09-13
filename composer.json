@@ -5,8 +5,8 @@
     "description": " is missing",
     "keywords": ["backend", "database", "sql", "orm"],
     "require": {
-        "maboiteaspam/idiorm": "dev-static",
-        "maboiteaspam/paris": "dev-static",
+        "j4mie/idiorm": "dev-static",
+        "j4mie/paris": "dev-static",
         "illuminate/database": "4.2.*",
         "phpoffice/phpexcel": "1.8.*",
         "slim/slim": "2.4.*",
