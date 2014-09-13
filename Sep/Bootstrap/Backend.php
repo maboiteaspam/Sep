@@ -9,7 +9,16 @@ class Backend extends Bootstrap{
      */
     public $app;
 
-    public function init( $env,$config_dirs=[] ){
+    public function init( $env, $config_dirs=[] ){
+
+        // try to detect php built in server with direct router use
+        // IE: php -S localhost:8000 router.php
+        if( isset($_SERVER["SERVER_SOFTWARE"]) &&
+            preg_match("/Development Server$/",$_SERVER["SERVER_SOFTWARE"]) > 0 ){
+            $_SERVER["REQUEST_URI"] = "/index.php".$_SERVER["REQUEST_URI"];
+            $_SERVER["SCRIPT_NAME"] = "/index.php";
+        }
+
         parent::init($env,$config_dirs);
 
         $config = $this->config;
@@ -19,6 +28,7 @@ class Backend extends Bootstrap{
         \ORM::configure('logging', true);
 
         $config["router"]["templates.path"] = array_reverse($config["router"]["templates.path"]);
+
         $this->app = new \Slim\Slim( $config["router"] );
         $app = $this->app;
 
@@ -43,10 +53,28 @@ class Backend extends Bootstrap{
         parent::load_intl_messages($language);
     }
 
+    public function load_static_asset( $path ){
+
+        $config = $this->config;
+        $www_path = $config["www_path"];
+
+        $www_path = array_reverse($www_path);
+        foreach( $www_path as $p ){
+            // @todo : improve to avoid security issues
+            $p = $p."/".$path;
+            $p = str_replace("//","/",$p);
+            $p = str_replace("//","/",$p);
+            if( file_exists($p) ){
+                echo file_get_contents($p);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function load_app(){
 
         $config = $this->config;
-        $www_path = $config->www_path;
         $intl = $this->intl;
         $app = $this->app;
         $view_models = [];
@@ -54,11 +82,11 @@ class Backend extends Bootstrap{
         $sanitizer = new \Sep\Sanitizer();
 
 // # load models
-        foreach($view_models_path as $view_model_path ){
-            $files = \Sep\Utils::scan_classes($view_model_path);
-            $view_models = [];
-            foreach( $files as $filepath=>$class ){
-                $view_models[$class] = require("$filepath");
+        $files = \Sep\Utils::scan_classes($view_models_path);
+        foreach( $files as $filepath=>$class ){
+            $c = require("$filepath");
+            if( is_callable($c) ){
+                $view_models[$class] = $c;
             }
         }
         $orm_model = new \Sep\ORMHelper();
@@ -508,15 +536,7 @@ class Backend extends Bootstrap{
 
 // Static assets
 //----------------
-        $app->get(":path",
-            function($path) use($www_path){
-                foreach( $www_path as $p ){
-                    // @todo : improve to avoid security issues
-                    if( file_exists($p."/".$path) ){
-                        return file_get_contents($p."/".$path);
-                    }
-                }
-            })
-            ->conditions(array('path' => '.+'));
+        $app->get(":path",[$this,"load_static_asset"])
+            ->conditions(array('path' => ".+[.](js|css|gif|png|jpg|jpeg)"));
     }
 } 
