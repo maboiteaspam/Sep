@@ -20,12 +20,8 @@
             "package": {
                 "name": "maboiteaspam/idiorm",
                 "version": "1.0.0",
-                "dist": {
-                    "url": "https://github.com/maboiteaspam/idiorm/zipball/static",
-                    "type": "zip"
-                },
                 "source": {
-                    "url": "https://github.com/maboiteaspam/idiorm.git",
+                    "url": "git://github.com/maboiteaspam/idiorm.git",
                     "type": "git",
                     "reference": "static"
                 }
@@ -36,12 +32,8 @@
             "package": {
                 "name": "maboiteaspam/paris",
                 "version": "1.0.0",
-                "dist": {
-                    "url": "https://github.com/maboiteaspam/paris/zipball/static",
-                    "type": "zip"
-                },
                 "source": {
-                    "url": "https://github.com/maboiteaspam/paris.git",
+                    "url": "git://github.com/maboiteaspam/paris.git",
                     "type": "git",
                     "reference": "static"
                 }
