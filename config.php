@@ -12,12 +12,18 @@
         ],
         "router"=>[
             'mode' => 'development',
-            'debug' => !true,
+            'debug' => false,
             'view'=>'\Sep\View\SlimView',
             'templates.path' => [
                 __DIR__."/backend/templates/"
             ],
             'log.level' => 8 //\Slim\Log::DEBUG
+        ],
+    ],
+    "production"=>[
+        "router"=>[
+            'mode' => 'production',
+            'log.level' => 3 //\Slim\Log::CRITICAL
         ],
     ]
 ];
