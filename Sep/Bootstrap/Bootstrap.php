@@ -22,7 +22,7 @@ class Bootstrap {
         return $user_language;
     }
 
-    public function load_intl_messages($dirs=[],$language=null ){
+    public function load_intl_messages($language=null ){
         $intl = $this->intl;
         $dirs = $this->config["intl_path"];
         $dirs = array_reverse($dirs);

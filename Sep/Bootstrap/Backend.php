@@ -38,9 +38,9 @@ class Backend extends Bootstrap{
         $app->container->set("user_language", $user_language);
     }
 
-    public function load_intl_messages($dirs=[],$language=null ){
+    public function load_intl_messages($language=null ){
         $language = !$language?$this->app->container->get("user_language"):$language;
-        parent::load_intl_messages($dirs,$language);
+        parent::load_intl_messages($language);
     }
 
     public function load_app(){
