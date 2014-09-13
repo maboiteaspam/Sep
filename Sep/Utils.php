@@ -17,13 +17,16 @@ class Utils {
         extract($vars);
         return include($path);
     }
-    public static function scan_classes($path){
-        $files = scandir($path);
-        array_shift($files);
-        array_shift($files);
+    public static function scan_classes($paths){
         $classes = array();
-        foreach($files as $file ){
-            $classes["$path/$file"] = basename($file,".php");
+        $paths = is_string($paths)?[$paths]:$paths;
+        foreach( $paths as $path ){
+            $files = scandir($path);
+            array_shift($files);
+            array_shift($files);
+            foreach($files as $file ){
+                $classes["$path/$file"] = basename($file,".php");
+            }
         }
         return $classes;
     }

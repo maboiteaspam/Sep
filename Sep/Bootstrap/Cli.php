@@ -14,7 +14,7 @@ class Cli extends Bootstrap{
         $this->action = $argv[1];
     }
 
-    public function setupSchema( $models_path ){
+    public function setupSchema($model_paths,$output_directory){
 
         $sqlHelper = new \Sep\Database\SqlHelper($this->config["db"]);
         $db_vendor = $sqlHelper->getDbVendor();
@@ -29,12 +29,12 @@ class Cli extends Bootstrap{
         touch($db_path);
 
         // # load models
-        $models = \Sep\Utils::scan_classes($models_path);
+        $models = \Sep\Utils::scan_classes($model_paths);
 
-        if( is_dir(__DIR__."/schema/$db_vendor/gen/") == false )
-            mkdir(__DIR__."/schema/$db_vendor/gen/",0777,true);
+        if( is_dir("$output_directory/$db_vendor/gen/") == false )
+            mkdir("$output_directory/$db_vendor/gen/",0777,true);
 
-        foreach( $models as $model_file=>$model_class ){
+        foreach( $models as $model_class ){
 
             $query = "";
 
@@ -44,20 +44,26 @@ class Cli extends Bootstrap{
             if( class_exists($model_class) ){
                 $orm_helper = new \Sep\ORMHelper();
                 $query = $sqlHelper->create_command($orm_helper,$model_class);
-                file_put_contents(__DIR__."/schema/$db_vendor/gen/$model_class.sql",$query);
+                file_put_contents("$output_directory/$db_vendor/gen/$model_class.sql",$query);
 
-            }else if( file_exists($models_path."/$model_class.sql") ){
-                $query = file_get_contents("$models_path/$model_class.sql");
+            }else{
+                foreach( $model_paths as $model_path ){
+                    if( file_exists($model_path."/$model_class.sql") ){
+                        $query = file_get_contents("$model_path/$model_class.sql");
+                        break;
+                    }
+                }
             }
-            \ORM::raw_execute($query);
-            echo "$query\n\n";
+            if( $query != "" ){
+                \ORM::raw_execute($query);
+                echo "$query\n\n";
+            }else{
+                echo "no query\n\n";
+            }
         }
     }
 
-    public function setupFixtures( ){
-
-        $quote_character = isset($this->config["db"]["identifier_quote_character"])?
-            $this->config["db"]["identifier_quote_character"]:"";
+    public function setupFixtures($fixture_paths){
 
         function pretty_print_record($records){
             $str = "";
@@ -68,48 +74,46 @@ class Cli extends Bootstrap{
             }
         }
 
-        $files_path = __DIR__."/fixtures/";
-        $files = \Sep\Utils::scan_classes($files_path);
+        $files = \Sep\Utils::scan_classes($fixture_paths);
         foreach( $files as $file_path=>$type ){
             $records = \Sep\Utils::include_scoped("$file_path");
-            echo "$type / ".count($records)." records\n";
-            echo "-------------\n";
+            if( is_array($records) ){
+                echo "$type / ".count($records)." records\n";
+                echo "-------------\n";
 
-            $done = 0;
-            $t_t = microtime(true);
-            \ORM::get_db()->beginTransaction();
-            foreach($records as $record ){
-                $t = microtime(true);
-                $admin = \Model::factory( $type )->create($record);
-                if( $admin->save() ){
-                    $done++;
-                }else{
-                    pretty_print_record(array($record));
+                $done = 0;
+                $t_t = microtime(true);
+                \ORM::get_db()->beginTransaction();
+                foreach($records as $record ){
+                    $admin = \Model::factory( $type )->create($record);
+                    if( $admin->save() ){
+                        $done++;
+                    }else{
+                        pretty_print_record(array($record));
+                    }
                 }
+                \ORM::get_db()->commit();
+                $t_t = microtime(true)-$t_t;
+                echo "$done new records about $type / $t_t s\n\n";
+            }else{
+                echo "$type / skipped\n";
+                echo "-------------\n\n";
             }
-            \ORM::get_db()->commit();
-            $t_t = microtime(true)-$t_t;
-            echo "$done new records about $type / $t_t s\n\n";
         }
 
     }
 
-    public function createDump($models_path ){
+    public function createDump($model_paths){
         $date = date("Ymd His");
 
 
         $sqlHelper = new \Sep\Database\SqlHelper($this->config["db"]);
-        $db_vendor = $sqlHelper->getDbVendor();
-        $db_path = $sqlHelper->getDbPath();
-
 
         $conn_str = $this->config["db"]["connection_string"];
         $user = isset($this->config["db"]["user"])?
             $this->config["db"]["user"]:"";
         $password = isset($this->config["db"]["password"])?
             $this->config["db"]["password"]:"";
-        $quote_character = isset($this->config["db"]["identifier_quote_character"])?
-            $this->config["db"]["identifier_quote_character"]:"";
 
         $dbh = null;
 
@@ -121,22 +125,12 @@ class Cli extends Bootstrap{
 
         $orm_helper = new \Sep\ORMHelper();
 
-        $quote = function($part)use($quote_character){
-            if ($part === '*') return $part;
-            return $quote_character.str_replace($quote_character,
-                $quote_character . $quote_character,
-                $part
-            ).$quote_character;
-        };
-
         if( $dbh ){
 
             // # load models
-            $models = \Sep\Utils::scan_classes($models_path);
+            $models = \Sep\Utils::scan_classes($model_paths);
 
-            foreach( $models as $model_file=>$model_class ){
-
-                $query = "";
+            foreach( $models as $model_class ){
 
                 $table_name = $orm_helper->get_table_name($model_class);
                 echo "-- $date\n";
