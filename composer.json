@@ -1,20 +1,18 @@
 {
-  "name": "maboiteaspam/sep",
-  "license": "MIT",
-  "description": " is missing",
-  "keywords": ["backend", "database", "sql", "orm"],
-  "require": {
-      "maboiteaspam/idiorm": "1.0.0",
-      "maboiteaspam/paris": "1.0.0",
-    "illuminate/database": "4.2.*",
-    "phpoffice/phpexcel": "1.8.*",
-    "slim/slim": "2.4.*",
-    "Respect/Validation": "0.7.*@dev"
-  },
+    "name": "maboiteaspam/sep",
+    "license": "MIT",
+    "description": " is missing",
+    "keywords": ["backend", "database", "sql", "orm"],
+    "require": {
+        "maboiteaspam/idiorm": "1.0.0",
+        "maboiteaspam/paris": "1.0.0",
+        "illuminate/database": "4.2.*",
+        "phpoffice/phpexcel": "1.8.*",
+        "slim/slim": "2.4.*",
+        "Respect/Validation": "0.7.*@dev"
+    },
     "autoload": {
-        "psr-0": {
-            "Sep\\": "Sep"
-        }
+        "psr-0": { "Sep": "." }
     },
     "repositories": [
         {
@@ -50,5 +48,5 @@
             }
         }
     ],
-  "minimum-stability": "dev"
+    "minimum-stability": "dev"
 }
