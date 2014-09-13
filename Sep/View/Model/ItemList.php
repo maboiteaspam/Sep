@@ -272,7 +272,8 @@ class ItemList extends \Sep\View\Base {
             if( count($items) > 0 ){
                 $model_type = $this->view_model["model_type"];
                 $redirect_url = "/$model_type/list/$this->items_cnt/$this->page";
-                if( $this->filter_id ) $redirect_url .= "?filter_id=$this->filter_id";
+                if( isset($_SERVER["QUERY_STRING"])) $redirect_url .= "?".$_SERVER["QUERY_STRING"];
+                if( $this->filter_id ) $redirect_url = \Sep\Utils::append_to_url($redirect_url,["filter_id"=>$this->filter_id]);
                 $this->app->redirect( $redirect_url );
             }
         }

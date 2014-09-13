@@ -17,6 +17,15 @@ class Utils {
         extract($vars);
         return include($path);
     }
+    public static function append_to_url($url,$vars=array()){
+        if( substr($url,-1) == "?" ) $url = substr($url,0,-1);
+        if( substr($url,-1) == "&" ) $url = substr($url,0,-1);
+        foreach( $vars as $n=>$v ){
+            if( strpos($url,"?") === false ) $url.="?$n=$v";
+            else $url .= "&$n=$v";
+        }
+        return $url;
+    }
     public static function scan_classes($paths){
         $classes = array();
         $paths = is_string($paths)?[$paths]:$paths;

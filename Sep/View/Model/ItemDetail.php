@@ -45,7 +45,7 @@ class ItemDetail extends \Sep\View\Base {
                 $this->form->add_value_from_post("$k",$v);
             }
         }
-        $this->form->about = $_SERVER["REQUEST_URI"];
+        $this->form->about = $this->app->request()->getPathInfo();
         return $this;
     }
     public function render(){

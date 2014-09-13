@@ -25,25 +25,25 @@
 </div>
 <div class="body_list_area">
     <? if( count($rows)>0){ ?>
-        <form method="GET" name="quick_filter">
-        <table style="width:100%">
-            <thead>
+        <form method="GET" name="quick_filter" action="<?= $current_page_href ?>">
+            <table style="width:100%">
+                <thead>
                 <tr>
                     <? foreach($list_headers as $header=>$text){ ?>
                         <th><?= $text ?></th>
                     <? } ?>
                 </tr>
-            </thead>
-            <tbody>
-            <? foreach($rows as $row){?>
-                <tr>
-                    <? foreach($list_headers as $header=>$text){ ?>
-                        <td><?= $row[$header] ?></td>
-                    <? } ?>
-                </tr>
-            <? } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <? foreach($rows as $row){?>
+                    <tr>
+                        <? foreach($list_headers as $header=>$text){ ?>
+                            <td><?= $row[$header] ?></td>
+                        <? } ?>
+                    </tr>
+                <? } ?>
+                </tbody>
+            </table>
             <input type="hidden" name="filter_id" value="<?= $filter_id; ?>" />
         </form>
     <? }else{ ?>
@@ -51,37 +51,37 @@
             <h2>List is empty !<br/>:-(</h2>
         </div>
         <? if( $has_inline_filters ){ ?>
-        <div class="adjust_filters">
-            <h2>Adjust your filters</h2>
-            <form method="GET" name="quick_filter">
-                <ul>
-                <? foreach($list_headers as $header=>$text){ ?>
-                    <li class="input_area">
-                        <?= $text ?>
-                    </li>
-                <? } ?>
-                    <li class="input_area">
-                        <label class="span_area">&nbsp;</label>
-                        <input type="submit"
-                               class="link_area"
-                               name="edit"
-                               value="Adjust filters" />
-                        <input type="submit"
-                               class="link_area"
-                               name="delete"
-                               value="Clear filters" />
-                    </li>
-                </ul>
-            </form>
-        </div>
+            <div class="adjust_filters">
+                <h2>Adjust your filters</h2>
+                <form method="GET" name="quick_filter">
+                    <ul>
+                        <? foreach($list_headers as $header=>$text){ ?>
+                            <li class="input_area">
+                                <?= $text ?>
+                            </li>
+                        <? } ?>
+                        <li class="input_area">
+                            <label class="span_area">&nbsp;</label>
+                            <input type="submit"
+                                   class="link_area"
+                                   name="edit"
+                                   value="Adjust filters" />
+                            <input type="submit"
+                                   class="link_area"
+                                   name="delete"
+                                   value="Clear filters" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
         <? } ?>
     <? } ?>
 </div>
 <div class="bottom_list_area">
     <a href="<?= $add_record_href ?>"
         <?= $add_record_href?"":"disabled" ?>
-        class="link_area <?= $add_record?"":"hide" ?>"
-        name="add"><?= $add_record ?></a>
+       class="link_area <?= $add_record?"":"hide" ?>"
+       name="add"><?= $add_record ?></a>
     <a href="<?= $export_excel_href ?>"
         <?= count($rows)?"":"disabled" ?>
        class="link_area <?= $export_excel?"":"hide" ?>"
@@ -234,7 +234,7 @@
         });
         $("form[name='quick_filter']").on("submit",function(ev){
             $(this).find("input").each(function(k,v){
-                if( !$(v).val() ) $(v).remove();
+                if( $(v).val()=="" ) $(v).remove();
             });
         })
     })();
