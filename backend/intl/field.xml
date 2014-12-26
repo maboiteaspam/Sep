@@ -28,10 +28,6 @@
         <translated lng="en">Enter your first name</translated>
         <translated lng="fr">Saisissez votre prénom</translated>
     </message>
-    <message code="first_name.must_not_be_empty">
-        <translated lng="en">First name must not be empty</translated>
-        <translated lng="fr">Votre prénom de doit pas être vide</translated>
-    </message>
     <message code="last_name.(field_name|header_name)">
         <translated lng="en">name</translated>
         <translated lng="fr">nom</translated>
@@ -39,10 +35,6 @@
     <message code="last_name.place_holder">
         <translated lng="en">Enter your name</translated>
         <translated lng="fr">Saisissez votre nom</translated>
-    </message>
-    <message code="last_name.must_not_be_empty">
-        <translated lng="en">Name must not be empty</translated>
-        <translated lng="fr">Votre nom de doit pas être vide</translated>
     </message>
     <message code="login.(field_name|header_name)">
         <translated lng="en">Login</translated>

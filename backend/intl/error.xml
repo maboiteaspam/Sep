@@ -1,0 +1,11 @@
+<?xml version='1.0' standalone='yes'?>
+<intl>
+    <message code="(.+)[.]must_not_be_empty">
+        <translated lng="en">Please fill in $1</translated>
+        <translated lng="fr">Veuillez remplir $1</translated>
+    </message>
+    <message code="(.+)[.]id[.]invalid_length$">
+        <translated lng="en">Please choose at list 1 $1</translated>
+        <translated lng="fr">Veuillez sélectionner au moins 1 $1</translated>
+    </message>
+</intl>
